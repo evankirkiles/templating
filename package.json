@@ -1,8 +1,9 @@
 {
   "name": "templating",
   "version": "1.0.0",
-  "description": "templates for creating new projects",
-  "main": "build/index.js",
+  "description": "evan's templates for creating new projects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "evan kirkiles",
   "license": "MIT",
   "type": "module",
@@ -12,6 +13,9 @@
   "scripts": {
     "prepare": "npm run build && husky install",
     "prepublish": "bash .git/hooks/pre-commit",
+    "preversion": "bash .git/hooks/pre-commit",
+    "version": "npm run format && git add -A templates && git add index.ts",
+    "postversion": "git push && git push --tags",
     "start": "node dist/index.js",
     "build": "tsc"
   },
@@ -35,6 +39,12 @@
     "typescript": "4.8.3"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
