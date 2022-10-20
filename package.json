@@ -1,5 +1,5 @@
 {
-  "name": "templating",
+  "name": "evans-templates",
   "version": "1.0.0",
   "description": "evan's templates for creating new projects",
   "main": "dist/index.js",
@@ -7,6 +7,14 @@
   "author": "evan kirkiles",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:evankirkiles/templating.git"
+  },
+  "bugs": {
+    "url": "https://github.com:evankirkiles/templating/issues"
+  },
+  "homepage": "https://github.com:evankirkiles/templating",
   "files": [
     "dist/**/*"
   ],
